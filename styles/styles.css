@@ -1,1 +1,403 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Lora:wght@500;700&family=Montserrat:wght@400;500;700&display=swap");
 /* VARIABLES */
+/* FUNCTIONS*/
+/* GLOBAL RESETS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #181719;
+  position: relative;
+}
+
+body.hide-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* HEADING STYLES */
+h1 {
+  color: #FFFFFF;
+  font-family: "Crimson Pro", serif;
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+
+h2 {
+  color: #FFFFFF;
+  font-family: "Lora", serif;
+  font-size: 3.6rem;
+  font-weight: 500;
+}
+
+h3 {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+h4 {
+  color: #FFFFFF;
+  font-family: "Lora", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+h5 {
+  color: #A9A9A9;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+p {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 37.5rem;
+  width: 90%;
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 95%;
+    max-width: 144rem;
+  }
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 3.8rem;
+  padding-top: 1.9rem;
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    padding-top: 4.2rem;
+  }
+}
+
+.header__menu__container {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+.header__menu__container h1 {
+  border: 1px solid #FFFFFF;
+  padding: 0.8rem;
+  text-transform: uppercase;
+}
+
+.header__navigation__desktop {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .header__navigation__desktop {
+    display: block;
+    width: 40%;
+  }
+  .header__navigation__desktop ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__navigation__desktop ul li a {
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.6rem;
+  }
+  .header__navigation__desktop ul li a:hover {
+    border-bottom: 2px solid #FFFFFF;
+    padding-bottom: 0.6rem;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header__navigation {
+    display: none;
+  }
+}
+
+.header__navigation__hamburguer {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.header__navigation__hamburguer span {
+  background-color: #FFFFFF;
+  display: block;
+  height: 0.3rem;
+  margin-bottom: 0.3rem;
+  transition: all 0.5s ease-in-out;
+  width: 3rem;
+}
+
+.header__navigation__hamburguer__menu {
+  background-color: #181719;
+  clip-path: circle(40px at calc(50% + (37.5rem / 2) - (40px / 2)) calc(0% + 1.9rem + (40px / 2)));
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+}
+
+.header__navigation__hamburguer.active + .header__navigation__hamburguer__menu {
+  clip-path: circle(100%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__navigation__hamburguer__menu__links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header__navigation__hamburguer__menu__link {
+  margin-bottom: 2rem;
+}
+
+.header__navigation__hamburguer__menu__link a {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  color: #FFFFFF;
+  padding-bottom: 0.6rem;
+}
+.header__navigation__hamburguer__menu__link a:hover {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.6rem;
+  transition: all 300ms ease-in-out;
+}
+
+.line {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.active .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.active .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+
+.active .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+/* MAIN */
+.main {
+  padding-bottom: 6.1rem;
+}
+@media screen and (min-width: 1024px) {
+  .main__information {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16.9rem;
+  }
+}
+.main__information__details {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__details {
+    width: 60%;
+  }
+}
+.main__information__details h2 {
+  margin-bottom: 2.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__details h2 {
+    font-size: 4.8rem;
+    margin-bottom: 4rem;
+  }
+}
+.main__information__details p {
+  margin-bottom: 2.5rem;
+  max-width: 25rem;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__details p {
+    font-size: 2.4rem;
+    max-width: 41rem;
+    margin-bottom: 4.8rem;
+  }
+}
+.main__information__details__button {
+  display: inline-block;
+}
+.main__information__details__button a {
+  color: #FFFFFF;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__details__button a {
+    font-size: 1.8rem;
+  }
+}
+.main__information__details__button a span {
+  margin-left: 1.5rem;
+}
+.main__information__product {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+}
+@media screen and (min-width: 1024px) {
+  .main__information__product {
+    grid-template-columns: repeat(20, 1fr);
+    width: 60%;
+  }
+}
+.main__information__product__image {
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__product__image {
+    max-width: 73.7rem;
+  }
+}
+.main__information__product__image img {
+  width: 100%;
+}
+.main__information__product__box {
+  margin-top: -20%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #181719;
+  width: 100%;
+  grid-column: 3/13;
+  padding: 1.317rem 0 2.5rem 1.9rem;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__product__box {
+    grid-column: 9/20;
+    padding: 1.8rem 0 3.1rem 3.4rem;
+  }
+}
+.main__information__product__person {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1.824rem;
+}
+.main__information__product__person img {
+  height: 3.6rem;
+  width: 3.6rem;
+  border-radius: 50%;
+  margin-right: 1.39rem;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__product__person img {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+.main__information__product__person__details h3 {
+  margin-bottom: 0.585rem;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__product__person__details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+}
+.main__information__product__person__details p {
+  color: #828282;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__product__person__details p {
+    font-size: 1.2rem;
+  }
+}
+.main__information__product h4 {
+  max-width: 21rem;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .main__information__product h4 {
+    font-size: 2.4rem;
+    max-width: 28.7rem;
+  }
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 2.4rem;
+}
+footer h5 strong {
+  text-decoration: underline;
+}
